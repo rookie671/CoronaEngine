@@ -105,7 +105,7 @@ function(corona_install_corona_editor target_name core_target)
         # copy runs on every build.  Making the executable depend on this
         # target ensures it is triggered even with --target <exe>.
         add_custom_target(corona_editor_install_${target_name}
-            COMMAND     cmd /c call "${_CORONA_WRAPPER_SCRIPT}" "$<TARGET_FILE_DIR:${target_name}>/CabbageEditor" "$<TARGET_FILE_DIR:${target_name}>/CabbageEditor/Frontend"
+            COMMAND     cmd /c "${_CORONA_WRAPPER_SCRIPT}" "$<TARGET_FILE_DIR:${target_name}>/CabbageEditor" "$<TARGET_FILE_DIR:${target_name}>/CabbageEditor/Frontend"
             COMMENT     "[Corona:Editor] Installing editor resources..."
             VERBATIM
         )
